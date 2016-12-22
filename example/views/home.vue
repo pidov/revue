@@ -1,6 +1,8 @@
 <template>
-  <write></write>
-  <read></read>
+  <div id="app">
+  	<write></write>
+	  <read></read>
+  </div>
 </template>
 
 <script>

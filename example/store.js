@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Revue from '../src/revue'
+import Revue from '../src'
 import { createStore, applyMiddleware } from 'redux'
 import reducer from './reducers/index'
 import thunk from 'redux-thunk'

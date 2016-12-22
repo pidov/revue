@@ -4,7 +4,7 @@
     <h2>Writable todos</h2>
     {{ todos.isPosting ? 'Posting...' : '' }}
     <ul class="todos" v-if="todos.items && todos.items.length > 0">
-      <li class="todo" :class="{del: todo.done}" v-for="todo in todos.items" track-by="$index" v-text="todo.text" @click="toggleTodo($index)"></li>
+      <li class="todo" :class="{del: todo.done}" v-for="(todo, index) in todos.items" key="$index" v-text="todo.text" @click="toggleTodo(index)"></li>
     </ul>
   </div>
 </template>
@@ -20,7 +20,7 @@
         todos: this.$select('todos')
       }
     },
-    ready () {
+    mounted () {
       store.actions.addTodo('damn')
     },
     methods: {

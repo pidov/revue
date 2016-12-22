@@ -95,12 +95,7 @@ export default {
 ## Development
 
 - **npm test** run unit test
-- **npm run watch** build example
-- **serve example** serve example
-- **make publish** publish a new version
-- **npm run cjs** build in CommonJS format
-- **npm run umd** build in umd format
-- **npm run demo** to publish demo to surge
+- **npm run example** run webpack example
 
 ## License
 
