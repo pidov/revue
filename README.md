@@ -1,16 +1,6 @@
-<h1 align="center">Revue</h1>
+# Revue
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/revue">
-    <img src="https://camo.githubusercontent.com/b145895dcb12693255d3b4b371446ea6b73fa357/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f72657675652e737667" alt="NPM version" style="max-width:100%;">
-  </a>
-  <a href="https://www.npmjs.com/package/revue">
-    <img src="https://camo.githubusercontent.com/49a99ffd8da7a0793e1d648f859792e9b1db45fa/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f72657675652e737667" alt="NPM download" style="max-width:100%;"></a>
-  <a href="https://travis-ci.org/egoist/revue">
-    <img src="https://img.shields.io/travis/egoist/revue/master.svg" alt="Build Status" style="max-width:100%;">
-  </a>
-  <img src="https://img.shields.io/badge/stablity-experimental-red.svg">
-</p>
+[![NPM version](https://img.shields.io/npm/v/revue.svg?style=flat)](https://npmjs.com/package/revue) [![Build Status](https://img.shields.io/circleci/project/revue/revue/master.svg?style=flat)](https://circleci.com/gh/revue/revue) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
 > Learn [Redux](http://redux.js.org/) before using Revue. That would help you get rid of JavaScript fatigue, sort of.
 

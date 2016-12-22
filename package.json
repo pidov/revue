@@ -5,7 +5,7 @@
   "main": "dist/revue.common.js",
   "files": "dist",
   "scripts": {
-    "test": "npm run build && BABEL_ENV=test mocha --compilers js:babel-register --require should test.js --recursive",
+    "test": "BABEL_ENV=test mocha --compilers js:babel-register --require should test.js --recursive && npm run build",
     "build": "bili --format cjs --format umd --compress",
     "build:cjs": "bili --format cjs",
     "example": "vbuild -d",
