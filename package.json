@@ -6,7 +6,7 @@
   "files": "dist",
   "scripts": {
     "test": "BABEL_ENV=test mocha --compilers js:babel-register --require should test.js --recursive && npm run build",
-    "build": "bili --format cjs --format umd --compress",
+    "build": "bili --format cjs --format umd --compress --module-name Revue",
     "build:cjs": "bili --format cjs",
     "example": "vbuild -d",
     "build:example": "vbuild",
