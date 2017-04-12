@@ -1,9 +1,53 @@
-import dotProp from 'dot-prop'
-
 // to valid and match like `a as x.y.z`
 const re = /^([\w\.-]+)\s+as\s+([\w\.-]+)$/i
 
 const isDev = process.env.NODE_ENV !== 'production'
+
+// Helpers
+function isObj(x) {
+	var type = typeof x;
+	return x !== null && (type === 'object' || type === 'function');
+};
+
+function getPathSegments(path) {
+	const pathArr = path.split('.');
+	const parts = [];
+
+	for (let i = 0; i < pathArr.length; i++) {
+		let p = pathArr[i];
+
+		while (p[p.length - 1] === '\\' && pathArr[i + 1] !== undefined) {
+			p = p.slice(0, -1) + '.';
+			p += pathArr[++i];
+		}
+
+		parts.push(p);
+	}
+
+	return parts;
+}
+
+function setProp(obj, path, value) {
+	if (!isObj(obj) || typeof path !== 'string') {
+		return;
+	}
+
+	const pathArr = getPathSegments(path);
+
+	for (let i = 0; i < pathArr.length; i++) {
+		const p = pathArr[i];
+
+		if (!isObj(obj[p])) {
+			obj[p] = {};
+		}
+
+		if (i === pathArr.length - 1) {
+			obj[p] = value;
+		}
+
+		obj = obj[p];
+	}
+}
 
 function parseProp(prop) {
 	// realProp: property name/path in your instance
@@ -34,7 +78,7 @@ function bindVue(Vue, store) {
 					this._bindProps.forEach(prop => {
 						const {storeProp, realProp} = prop
 						if (realProp && storeProp) {
-							dotProp.set(this, realProp, deepProp(store.getState(), storeProp))
+							setProp(this, realProp, deepProp(store.getState(), storeProp))
 						}
 					})
 				}
